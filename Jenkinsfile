@@ -5,9 +5,8 @@ pipeline {
     jdk 'java'
 }
   stages {
-    stage('Test') {
-      parallel {
-        stage('Maven') {
+    
+       stage('Maven') {
           steps {
             echo 'Running from Jenkins file'
             sh(script: 'mvn compile', label: 'maven')
@@ -23,5 +22,3 @@ pipeline {
       }
     }
 
-  }
-}
